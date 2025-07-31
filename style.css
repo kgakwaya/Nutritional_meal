@@ -1,0 +1,126 @@
+/* Global styles and background */
+body {
+    background-image: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: #111827; /* Dark fallback color (Tailwind gray-900) */
+    color: #d1d5db; /* Default light text color */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Card and container styling for "glassmorphism" effect */
+.bg-base-100, .bg-base-200 {
+    background-color: rgba(31, 41, 55, 0.6); /* Tailwind gray-800 @ 60% opacity */
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* Header should be slightly more opaque */
+header .bg-base-100 {
+    background-color: rgba(17, 24, 39, 0.75) !important; /* Tailwind gray-900 @ 75% opacity */
+}
+
+/* The analysis result cards within the main container */
+div .bg-base-200 {
+    background-color: rgba(55, 65, 81, 0.7) !important; /* Tailwind gray-700 @ 70% opacity */
+}
+
+/* Override text colors to be light on the dark background */
+h1, h2, h3, h4, h5, .font-bold, .font-semibold {
+    color: #f9fafb !important; /* gray-50 */
+}
+
+p, label, li, ol, .text-sm {
+    color: #d1d5db; /* gray-300 */
+}
+
+.text-primary {
+    color: #10B981 !important;
+}
+
+/* Footer styling */
+footer {
+    color: #e5e7eb; /* gray-200 */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Input field styling */
+#meal-input {
+    background-color: rgba(17, 24, 39, 0.6) !important; /* gray-900 @ 60% */
+    color: #f9fafb;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+#meal-input::placeholder {
+    color: #9ca3af; /* gray-400 */
+}
+
+#meal-input:focus {
+    background-color: rgba(17, 24, 39, 0.8) !important; /* gray-900 @ 80% */
+    border-color: #10B981;
+}
+
+/* Animation for results appearing */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Custom CSS Bar Chart Styles */
+.bar-chart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: #d1d5db;
+    margin-top: 1rem;
+}
+
+.bar-chart-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.bar-chart-label {
+    width: 4.5rem; /* A bit more space for labels */
+    flex-shrink: 0;
+    font-weight: 500;
+    text-align: right;
+}
+
+.bar-chart-bar-wrapper {
+    flex-grow: 1;
+    background-color: rgba(17, 24, 39, 0.5); /* gray-900 @ 50% */
+    border-radius: 9999px;
+    height: 1.75rem;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.bar-chart-bar {
+    height: 100%;
+    border-radius: 0 9999px 9999px 0;
+    transition: width 0.7s cubic-bezier(0.23, 1, 0.32, 1); /* Smooth transition */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0.75rem;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
