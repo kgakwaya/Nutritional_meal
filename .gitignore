@@ -1,0 +1,50 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# API keys or sensitive files
+script.js
+*.key
+*.pem
+
+# IDE-specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+out/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.orig
+*.swp
+*.lock
+*.cache
+
+# Session storage
+sessionStorage/
